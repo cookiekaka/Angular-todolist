@@ -1,7 +1,7 @@
 
 <li class="todo-item">
-  <input *ngIf="todo.isDone" type="checkbox" (click)="onChangeChecked($event)" checked="checked"/>
-  <input *ngIf="!todo.isDone" type="checkbox" (click)="onChangeChecked($event)" />
+  <input *ngIf="todo.isDone" class="input" type="checkbox" (click)="onChangeChecked($event)" checked="checked"/>
+  <input *ngIf="!todo.isDone" class="input" type="checkbox" (click)="onChangeChecked($event)" />
   <span>{{ todo.todoText }}</span>
   <button (click)="onDelTodo()" class="del-todo-btn">删 除</button>
 </li>

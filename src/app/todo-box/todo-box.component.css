@@ -55,3 +55,11 @@
   cursor: pointer;
   margin-right: 10px;
 }
+
+.no-todo {
+  width: 490px;
+  border: 1px solid #ccc;
+  margin: auto;
+  margin-bottom: 8px;
+  text-align: center;
+}

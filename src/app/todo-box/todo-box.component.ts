@@ -32,7 +32,7 @@ export class TodoBoxComponent implements OnInit {
         isDone: false,
       });
       this.todoService.saveTodoList(this.todoList);
-      this.onCalFooterInfo();
+      this.calFooterInfo();
     }
   }
 
@@ -43,23 +43,23 @@ export class TodoBoxComponent implements OnInit {
     });
     this.todoList = newTodoList;
     this.todoService.saveTodoList(this.todoList);
-    this.onCalFooterInfo();
+    this.calFooterInfo();
   }
 
   onClearDone() {
     let newTodoList = this.todoList.filter((todo) => !todo.isDone);
     this.todoList = newTodoList;
     this.todoService.saveTodoList(newTodoList);
-    this.onCalFooterInfo();
+    this.calFooterInfo();
   }
 
-  onCalFooterInfo() {
+  calFooterInfo() {
     this.doneCount = this.todoList.filter((todoItem) => todoItem.isDone).length;
     this.isAllDone = this.todoList.length !== 0 && this.todoList.every((todoItem) => todoItem.isDone);
   }
 
   onVoted() {
-    this.onCalFooterInfo();
+    this.calFooterInfo();
     this.isAllDone = this.todoList.length !== 0 && this.todoList.every((todoItem) => todoItem.isDone);
   }
 }

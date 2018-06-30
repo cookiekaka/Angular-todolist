@@ -1,6 +1,7 @@
 <div class="todo-box">
   <input class="add-todo" placeholder="请输入任务并按enter键确认" (keydown)="onAddTodo($event)"/>
   <app-todo *ngFor="let todo of todoList" [todo]="todo" [todoList]="todoList" (onVoted)="onVoted($event)"></app-todo>
+  <div *ngIf="todoList.length===0" class="no-todo">恭喜您已完成所有任务</div>
   <div class="footer">
     <label class="footer-label">
       <input *ngIf="isAllDone" class="footer-input" type="checkbox" (click)="onSelectALl($event)" checked="checked" />

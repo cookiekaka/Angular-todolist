@@ -1,0 +1,16 @@
+<div class="todo-box">
+  <input class="add-todo" placeholder="请输入任务并按enter键确认" (keydown)="onAddTodo($event)"/>
+  <app-todo *ngFor="let todo of todoList" [todo]="todo" [todoList]="todoList" (onVoted)="onVoted($event)"></app-todo>
+  <div class="footer">
+    <label class="footer-label">
+      <input *ngIf="isAllDone" class="footer-input" type="checkbox" (click)="onSelectALl($event)" checked="checked" />
+      <input *ngIf="!isAllDone" class="footer-input" type="checkbox" (click)="onSelectALl($event)" />
+      <span>全选</span>
+    </label>
+    <span class="footer-info">
+      <span class="done-count">已完成{{ doneCount }}</span>
+      <span>/全部{{ todoList.length }}</span>
+    </span>
+    <button class="clear-done-btn" (click)="onClearDone()">清除已完成任务</button>
+  </div>
+</div>
